@@ -15,6 +15,8 @@ public with sharing class ContactController {
         return Database.query(query);
     }
 
+    
+
     @AuraEnabled
     public static void deleteContact(String contactId) {
         List<Contact> contacts = [
@@ -41,7 +43,12 @@ public with sharing class ContactController {
         delete objects;
         delete contacts;
     }
-    public static void methodB()
-    List<Contact> con = [SELECT Name From Contact];
-    return null;
+    public static void methodB(){
+        List<Contact> con = [SELECT Name From Contact];
+        return null;
+    }
+    
+    public static void methodA() {
+        return null;
+    }
 }
