@@ -7,7 +7,7 @@ public with sharing class ContactController {
             strConName = '%' + strConName + '%';
         String query = 'SELECT Id, Name, Email, AccountId, Account.Name, OwnerId, Owner.Name, CreatedBy.Name, CreatedDate, Contact_Level__c ' +
                 'FROM Contact ' +
-                'WHERE Name LIKE :strConName';]
+                'WHERE Name LIKE :strConName';
 
         if(!String.isEmpty(sortField)) {
             query += ' ORDER BY ' + sortField + (isAsc ? ' ASC ' : ' DESC ');
@@ -41,4 +41,7 @@ public with sharing class ContactController {
         delete objects;
         delete contacts;
     }
+    public static void methodB()
+    List<Contact> con = [SELECT Name From Contact];
+    return null;
 }
